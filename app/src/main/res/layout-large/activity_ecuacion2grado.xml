@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
@@ -54,6 +55,7 @@
                     android:layout_gravity="center|center_vertical"
                     android:layout_centerVertical="true"
                     android:layout_centerHorizontal="true" />
+
             </RelativeLayout>
 
             <TextView
@@ -81,7 +83,8 @@
                     android:id="@+id/editTextA"
                     android:layout_weight="1"
                     android:textSize="20dp"
-                    android:gravity="end"/>
+                    android:gravity="end"
+                    android:selectAllOnFocus="false"/>
 
                 <TextView
                     android:text="TextView"
@@ -126,7 +129,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center|center_vertical"
                 android:id="@+id/buttonResultado"
-                android:layout_marginBottom="20dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginTop="20dp"
                 android:layout_weight="1" />
 
@@ -136,7 +139,6 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textViewResultado"
                 android:layout_weight="1"
-                android:layout_marginTop="20dp"
                 android:textSize="20dp"
                 android:textStyle="bold"/>
 
@@ -151,13 +153,24 @@
         </LinearLayout>
 
         <ImageView
-            android:layout_width="300dp"
-            android:layout_height="200dp"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
             app:srcCompat="@drawable/androios"
-            android:layout_marginBottom="19dp"
+            android:layout_marginBottom="2dp"
             android:id="@+id/imageViewPeque"
             android:layout_alignParentBottom="true"
             android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="Creado por:"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textViewCreadoPor"
+            android:layout_weight="1"
+            android:layout_above="@id/imageViewPeque"
+            android:layout_centerHorizontal="true"
+            android:textSize="18dp"
+            android:textStyle="bold"/>
 
     </RelativeLayout>
 
@@ -168,6 +181,5 @@
         android:id="@+id/imageViewGrande"
         android:visibility="invisible"
         android:layout_gravity="center|center_vertical|center_horizontal"/>
-
 
 </FrameLayout>
