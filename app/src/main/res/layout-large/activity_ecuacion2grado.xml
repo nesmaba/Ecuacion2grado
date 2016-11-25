@@ -71,54 +71,53 @@
 
             <LinearLayout
                 android:orientation="horizontal"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp">
+                android:layout_marginTop="20dp"
+                android:layout_gravity="center_vertical|center_horizontal|center">
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="198dp"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="10"
                     android:id="@+id/editTextA"
-                    android:layout_weight="1"
                     android:textSize="20dp"
                     android:gravity="end"
+                    android:hint="a"
                     android:selectAllOnFocus="false"/>
 
                 <TextView
-                    android:text="TextView"
+                    android:text="x2 +  "
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textViewA"
-                    android:layout_weight="1"
                     android:textSize="20dp"/>
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="198dp"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="10"
                     android:id="@+id/editTextB"
-                    android:layout_weight="1"
                     android:textSize="20dp"
+                    android:hint="b"
                     android:gravity="end"/>
 
                 <TextView
-                    android:text="TextView"
+                    android:text="x +  "
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textViewB"
-                    android:layout_weight="1"
                     android:textSize="20dp"/>
 
                 <EditText
-                    android:layout_width="wrap_content"
+                    android:layout_width="198dp"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
                     android:ems="10"
                     android:id="@+id/editTextC"
-                    android:layout_weight="1"
+                    android:hint="c"
                     android:textSize="20dp"/>
 
             </LinearLayout>
@@ -143,13 +142,42 @@
                 android:textStyle="bold"/>
 
             <TextView
-                android:text="TextView"
+                android:text=""
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textViewResults"
+                android:id="@+id/textViewInfo"
                 android:layout_weight="1"
                 android:layout_marginLeft="100dp"
                 android:textSize="20dp"/>
+
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewDiscriminante"
+                android:layout_weight="1"
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="150dp"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewResults1"
+                android:layout_weight="1"
+                android:layout_marginLeft="150dp"
+                android:textSize="20dp"/>
+
+            <TextView
+                android:text=""
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewResults2"
+                android:layout_weight="1"
+                android:layout_marginLeft="150dp"
+                android:textSize="20dp"/>
+
         </LinearLayout>
 
         <ImageView
