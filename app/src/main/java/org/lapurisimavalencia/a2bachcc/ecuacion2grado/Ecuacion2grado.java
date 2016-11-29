@@ -69,85 +69,89 @@ public class Ecuacion2grado extends AppCompatActivity {
         return true;
     }
 
-    public void resolucionEcuacion2grado(){
+    public void resolucionEcuacion2grado() {
         // Código de Adrián Ferrandis
-        double a = 0, b=0, c=0;
+        double a = 0, b = 0, c = 0;
         double discriminante, sol1, sol2;
         String sA, sB, sC;
+
+        limpiarTextView(); // Limpiamos los textview de resultados e información.
 
         // Compruebo que los valores de a, b y c son correctos.
         try {
             sA = this.edtA.getText().toString();
-            if(sA.isEmpty()){
+            if (sA.isEmpty()) {
                 a = 0;
-            }else {
+            } else {
                 a = Double.parseDouble(this.edtA.getText().toString());
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             Toast.makeText(this, "ERROR: Valor de a incorrecto.", Toast.LENGTH_LONG).show();
         }
 
         try {
             sB = this.edtC.getText().toString();
-            if(sB.isEmpty()){
+            if (sB.isEmpty()) {
                 b = 0;
-            }else {
+            } else {
                 b = Double.parseDouble(this.edtB.getText().toString());
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             Toast.makeText(this, "ERROR: Valor de b incorrecto.", Toast.LENGTH_LONG).show();
         }
 
         try {
             sC = this.edtC.getText().toString();
-            if(sC.isEmpty()){
+            if (sC.isEmpty()) {
                 c = 0;
-            }else {
+            } else {
                 c = Double.parseDouble(this.edtC.getText().toString());
             }
-        }catch(Exception e){
+        } catch (Exception e) {
             Toast.makeText(this, "ERROR: Valor de c incorrecto.", Toast.LENGTH_LONG).show();
         }
 
-        if (a == 0){
-            if (b == 0){
-                if (c == 0){
+        if (a == 0) {
+            if (b == 0) {
+                if (c == 0) {
                     this.tvResultsInfo.setText("La solución de la ecuación es cualquier número real");
-                }
-                else{
+                } else {
                     this.tvResultsInfo.setText("Error: Ecuación Incorrecta");
                 }
+            } else {
+                sol1 = (-c) / b;
+                this.tvResultsInfo.setText("El resultado es: " + sol1);
             }
-            else{
-                sol1 = (-c)/b;
-                this.tvResultsInfo.setText("El resultado es: " +sol1);
-            }
-        }
-        else{
+        } else {
             //se empieza a calcular la parte de la raiz
-            discriminante=(b*b) - (4*a*c);
-            this.tvResultsDiscriminante.setText(Html.fromHtml("El discriminante (b<sup>2</sup> - 4ac) vale: " +discriminante));
+            discriminante = (b * b) - (4 * a * c);
+            this.tvResultsDiscriminante.setText(Html.fromHtml("El discriminante (b<sup>2</sup> - 4ac) vale: " + discriminante));
 
-            if (discriminante == 0){
-                sol1 = ((-1)*b) / (2*a);
+            if (discriminante == 0) {
+                sol1 = ((-1) * b) / (2 * a);
                 this.tvResults1.setText("Solución real: " + sol1);
-            }
-            else if (discriminante < 0){
+            } else if (discriminante < 0) {
                 discriminante = discriminante * (-1);
                 discriminante = Math.sqrt(discriminante);
                 this.tvResultsInfo.setText("Solucion (Soluciones Imaginarias):");
-                this.tvResults1.setText( (-b/(2*a)) +" + " + (discriminante/(2*a)) + "i" );
-                this.tvResults2.setText( (-b/(2*a)) +" - " + (discriminante/(2*a)) + "i" );
-            }
-            else{
-                discriminante=Math.sqrt(discriminante);
+                this.tvResults1.setText((-b / (2 * a)) + " + " + (discriminante / (2 * a)) + "i");
+                this.tvResults2.setText((-b / (2 * a)) + " - " + (discriminante / (2 * a)) + "i");
+            } else {
+                discriminante = Math.sqrt(discriminante);
                 //Calculamos las dos soluciones:
-                sol1= ((-1)*b + discriminante);
-                sol2= ((-1)*b - discriminante);
+                sol1 = ((-1) * b + discriminante);
+                sol2 = ((-1) * b - discriminante);
                 this.tvResultsInfo.setText("Soluciones reales:");
-                this.tvResults1.setText("Solucion 1: " + (sol1/(2*a)) );
-                this.tvResults2.setText("Solucion 2: " + (sol2/(2*a)) );
+                this.tvResults1.setText("Solucion 1: " + (sol1 / (2 * a)));
+                this.tvResults2.setText("Solucion 2: " + (sol2 / (2 * a)));
             }
         }
+    }
+
+    public void limpiarTextView(){
+        this.tvResultsInfo.setText("");
+        this.tvResultsDiscriminante.setText("");
+        this.tvResults1.setText("");
+        this.tvResults2.setText("");
     }
 }
